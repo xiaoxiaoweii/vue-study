@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>title</title>
+</head>
+<body>
+  <div id="app">
+    <h2>{{counter}}</h2>
+    <!-- <button v-on:click="increment">+</button>
+    <button v-on:click="decrement">-</button> -->
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+  </div>
+  <script src="../vue.js"></script>
+  <script></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        counter: 0
+      },
+      methods: {
+        increment() {
+          this.counter++
+        },
+        decrement() {
+          this.counter--
+        }
+      }
+    })
+  </script>
+</body>
+</html>
