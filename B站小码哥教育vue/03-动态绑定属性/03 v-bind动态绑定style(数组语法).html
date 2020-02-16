@@ -4,16 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>title</title>
-  <style>
-    .active {
-      color: red;
-    }
-  </style>
 </head>
 <body>
   <div id="app">
-    <h2 v-bind:class="{ active: isActive }">{{message}}</h2>
-    <button @click="btnClick">按钮</button>
+    <h2 :style="[baseStyle]">{{message}}</h2>
   </div>
   <script src="../vue.js"></script>
   <script></script>
@@ -22,12 +16,7 @@
       el: '#app',
       data: {
         message: "你好",
-        isActive: true
-      },
-      methods: {
-        btnClick: function () {
-          this.isActive = !this.isActive
-        }
+        baseStyle: { backgroundColor: 'red' }
       }
     })
   </script>

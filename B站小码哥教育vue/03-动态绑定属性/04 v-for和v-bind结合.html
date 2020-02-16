@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>title</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 点击列表中的哪一项  哪一项变为红色 -->
+  <div id="app">
+    <ul>
+      <li v-for="(item,index) in movies" class="isActive" @click='onClick'>{{item}}</li>
+    </ul>
+  </div>
+  <script src="../vue.js"></script>
+  <script></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        movies: ['海贼王','阿凡达','阿凡提']
+      },
+      methods: {
+        onClick: function () {
+          this.isActive = red
+        }
+      }
+    })
+  </script>
+</body>
+</html>
