@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div >{{ nums }}</div>
+    <button @click="onClick">综合使用得到小于30的和乘以2</button>
+  </div>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        newNums: [],
+        nums : [10, 20, 30, 40]
+      },
+      methods: {
+        onClick () {
+          newNums = this.nums.filter(function (n) {
+            return n < 30
+          }).map(function (n) {
+            return n * 2
+          }).reduce(function (previous, n) {
+            return previous + n
+          }, 0)
+          alert(newNums)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
