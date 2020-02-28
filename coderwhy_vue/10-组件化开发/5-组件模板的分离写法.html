@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../vue.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">{{message}}
+    <cpn></cpn>
+  </div>
+
+  <!-- 1.script标签 -->
+  <!-- <script type="text/x-template" id="myCpn">
+    <div>组件</div>
+  </script> -->
+
+  <!-- 2.template标签 -->
+  <template id="myCpn">
+    <div>呵呵</div>
+  </template>
+  <script>
+    // 1.注册一个全局组件
+    Vue.component('cpn', {
+      template: '#myCpn'
+    })
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好啊'
+      }
+    })
+  </script>
+</body>
+
+</html>
