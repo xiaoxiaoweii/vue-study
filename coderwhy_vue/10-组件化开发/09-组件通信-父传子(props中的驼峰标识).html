@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <cpn :cmessage="message" :cinfo="info"></cpn>
+  </div>
+  <template id="app1">
+    <div>{{cmessage}}{{cinfo}}
+      <ul>
+        <li v-for="item in cinfo">{{item}}</li>
+      </ul>
+    </div>
+  </template>
+  <script>
+    const cpn = {
+      template: "#app1",
+      props: {
+        cmessage: {
+          type: String,
+          default: "默认值"
+        },
+        cinfo: {
+          type: Array
+        }
+      }
+    }
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "父传子",
+        info: {
+          name: 'why',
+          age: 18,
+          height: 1.88
+        }
+      },
+      components: {
+        cpn
+      }
+    })
+  </script>
+</body>
+</html>

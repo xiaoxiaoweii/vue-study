@@ -20,12 +20,20 @@
 
   <!-- 2.template标签 -->
   <template id="myCpn">
-    <div>haha</div>
+    <div>{{title}}</div>
   </template>
   <script>
     // 1.注册一个全局组件
     Vue.component('cpn', {
       template: '#myCpn',
+      // data: {
+      //   title: "ha"
+      // }
+      data() {
+        return {
+          title: "ha"
+        }
+      }
     })
     const app = new Vue({
       el: '#app',
