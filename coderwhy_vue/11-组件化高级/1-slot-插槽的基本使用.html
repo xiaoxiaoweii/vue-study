@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>title</title>
+</head>
+<body>
+  <div id="app">
+    <cpn></cpn>
+    <cpn><span>按钮</span></cpn>
+    <cpn><i>按钮</i></cpn>
+    <cpn><a href="#">按钮</a></cpn>
+  </div>
+  <template id="cpn">
+    <div>
+      <h2>我是组件</h2>
+      <p>我是组件,哈哈哈</p>
+      <!-- 插槽里边给一个默认值 -->
+      <slot><button>按钮</button></slot>
+    </div>
+  </template>
+  <script src="../vue.js"></script>
+  <script></script>
+  <script>
+    new Vue({
+        el: '#app', // 用于挂载要管理的元素
+        data: { // 定义数据
+          message: '你好啊 李银河！'
+        },
+        components: {
+          cpn: {
+            template: '#cpn'
+          }
+        }
+    })
+  </script>
+</body>
+</html>
