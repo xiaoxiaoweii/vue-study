@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>title</title>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+    <cpn></cpn>
+    <cpn>
+      <!-- 目的是获取子组件的pLanguages vue2.5.x以下需要使用模板 以上不用 -->
+      <template slot-scope="slot">
+        <span>{{slot.data.join('-')}}</span>
+      </template>
+    </cpn>
+    <cpn>
+      <template slot-scope="slot">
+        <span>{{slot.data.join('*')}}</span>
+      </template>
+    </cpn>
+  </div>
+  <template id="cpn">
+    <div>
+      我是子组件
+      <slot :data= "pLanguages">
+        <ul>
+          <li v-for="item in pLanguages">{{item}}</li>
+        </ul>
+      </slot>
+    </div>
+  </template>
+  <script src="../vue.js"></script>
+  <script></script>
+  <script>
+    new Vue({
+        el: '#app', // 用于挂载要管理的元素
+        data: { // 定义数据
+          message: '你好啊 李银河！'
+        },
+        components: {
+          cpn: {
+            template: "#cpn",
+            data () {
+              return {
+                pLanguages: ['js', 'go', 'python', 'swift']
+              }
+            }
+          }
+        }
+    })
+  </script>
+</body>
+</html>

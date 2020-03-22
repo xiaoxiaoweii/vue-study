@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>title</title>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+    <cpn v-show="isShow"></cpn>
+  </div>
+  <template id="cpn">
+    <div>
+      <h2>我是子组件</h2>
+      <p>我是内容</p>
+      <button v-show="isShow">按钮</button>
+    </div>
+  </template>
+  <script src="../vue.js"></script>
+  <script></script>
+  <script>
+    new Vue({
+        el: '#app', // 用于挂载要管理的元素
+        data: { // 定义数据
+          message: '你好啊 李银河！',
+          isShow: true
+        },
+        components: {
+          cpn: {
+            template: "#cpn",
+            data () {
+              return {
+                isShow: false
+              }
+            }
+          }
+        }
+    })
+  </script>
+</body>
+</html>
