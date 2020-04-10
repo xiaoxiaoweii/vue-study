@@ -1,0 +1,256 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    color: pink;
+}
+#app {
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #2c3e50;
+    }
+
+    
+    a {
+        text-decoration: none;
+    }
+    /*正常的未被访问过的链接*/
+    a:link {
+        text-decoration: none;
+    }
+    /*已经访问过的链接*/
+    a:visited {
+        text-decoration: none;
+    }
+    /*鼠标划过(停留)的链接*/
+    a:hover {
+        text-decoration: none;
+    }
+    /* 正在点击的链接，鼠标在元素上按下还没有松开*/
+    a:active {
+        text-decoration: none;
+    }
+    /* 获得焦点的时候 鼠标松开时显示的颜色*/
+    a:focus {
+        text-decoration: none;
+    }
+      div {
+        display: block;
+      }
+      .divContent{
+        position: relative;
+        margin: 20px 10px;
+        padding: 5px 10px;
+        background-color: #fafafa;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,.2);
+      }
+      .btn-animate {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        cursor: pointer;
+        position: relative;
+        padding: 4px 8px;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0px 16px 47px -15px #590b9b;
+        background: none;
+        -webkit-transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+        border-radius: 8px;
+        overflow: hidden;
+        outline: none;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+      }
+      .btn-animate span {
+        position: relative;
+      }
+      .btn-animate:before,
+      .btn-animate:after {
+        border-radius: 8px;
+        content: "";
+        z-index: -1;
+        background: -webkit-linear-gradient(350deg, #560a9b, #9e158f);
+        background: linear-gradient(100deg, #560a9b, #9e158f);
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .btn-animate:after {
+        background: -webkit-linear-gradient(350deg, #003f77, #05c4b5);
+        background: linear-gradient(100deg, #003f77, #05c4b5);
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+          -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        -webkit-transition-delay: 0.1s;
+        transition-delay: 0.1s;
+      }
+      .btn-animate:hover {
+        box-shadow: 0px 16px 47px -15px #003f77;
+      }
+      .btn-animate:hover:after {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+      }
+      .btn-animate:active {
+        -webkit-transform: translateY(4px) translateZ(0);
+        transform: translateY(4px) translateZ(0);
+        box-shadow: 0px 8px 10px -6px #003f77;
+      }
+       #Joke {
+        margin-bottom: 70px;
+        padding-bottom: 85px;
+        height: max-content !important;
+      }
+      .paddding {
+        margin-bottom: 10px;
+      }
+      #Weather {
+        margin-bottom: 20px;
+        height: max-content !important;
+      }
+      #WeatherSearch{
+        text-align: center;
+        position: relative;
+        margin-top: 20px;
+      }
+      .oinput {
+        width: 140px;
+        outline-style: none;
+        border: 1px solid rgb(206, 194, 194);
+        border-radius: 20px;
+        padding: 6px 8px;
+        background-color: #fafafa;
+      }
+      .oinput:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+          0 0 8px rgba(102, 175, 233, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+          0 0 8px rgba(102, 175, 233, 0.6);
+      }
+      .WeatherHeader {
+        text-align: center;
+        /* position: fixed;
+        left: 40%;
+        top: 2%; */
+      }
+
+      .tem {
+        position: relative;
+        margin: 20px 10px;
+        background-color: #fafafa;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,.2);
+      }
+
+
+      .temnow {
+        font-size: 26px;
+      }
+      
+      .temNow {
+        font-size: 30px;
+      }
+      .temMaxMin {
+        padding: 0;
+        width: 25%;
+        display: inline-block;
+      }
+      .temCity {
+        font-size: 26px;
+        width: 40%;
+      }
+      .temCond {
+        width: 32%;
+      }
+      .oicon {
+        width: 22px;
+        vertical-align: middle;
+        margin-bottom: 2px;
+      }
+      ul {
+        margin: 5px 0;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        margin: 5px 0;
+        display: block;
+        float: left;
+        font-size: 14px;
+        position: relative;
+        transition: all 0.3s ease-out;
+        list-style: none;
+        line-height: 20px;
+      }
+      .li1 {
+        width: 40%;
+      }
+      .li2 {
+        width: 30%;
+      }
+      .clear {
+        clear: both;
+      }
+      .temPop {
+        padding: 0;
+        display: inline-block;
+        width: 70%;
+      }
+      .sugspace {
+        margin-top: 10px;
+      }
+      .datashow {
+        margin-bottom: 10px;
+      }
+      .oli1 {
+        width: 50%;
+      }
+     #Weather{
+       padding-bottom: 70px; 
+     }
+     #About{
+      padding-bottom: 20px; 
+     }
+     .cspace{
+       margin-bottom: 20px;
+     }
+ html::-webkit-scrollbar { width: 0 !important }
+ html { -ms-overflow-style: none; }
+ html { overflow: -moz-scrollbars-none; 
+     }
+
+.imgline{
+ background-color: #94b4e6;
+ color: rgb(255, 255, 255);
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+}
+
+.WeatherContent{
+  padding: 5px 10px;
+}
